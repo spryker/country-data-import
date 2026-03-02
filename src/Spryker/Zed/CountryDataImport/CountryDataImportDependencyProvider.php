@@ -33,11 +33,6 @@ class CountryDataImportDependencyProvider extends DataImportDependencyProvider
      */
     public const PROPEL_QUERY_STORE = 'PROPEL_QUERY_STORE';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -49,11 +44,6 @@ class CountryDataImportDependencyProvider extends DataImportDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCountryPropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_COUNTRY, $container->factory(function (): SpyCountryQuery {
@@ -63,11 +53,6 @@ class CountryDataImportDependencyProvider extends DataImportDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCountryStorePropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_COUNTRY_STORE, $container->factory(function (): SpyCountryStoreQuery {
@@ -77,11 +62,6 @@ class CountryDataImportDependencyProvider extends DataImportDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStorePropelQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_STORE, $container->factory(function (): SpyStoreQuery {

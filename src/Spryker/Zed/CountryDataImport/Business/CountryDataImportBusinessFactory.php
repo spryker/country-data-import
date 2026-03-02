@@ -24,11 +24,6 @@ use Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
  */
 class CountryDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @param \Generated\Shared\Transfer\DataImporterConfigurationTransfer|null $dataImporterConfigurationTransfer
-     *
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getCountryStoreDataImporter(
         ?DataImporterConfigurationTransfer $dataImporterConfigurationTransfer = null
     ): DataImporterInterface {
@@ -47,25 +42,16 @@ class CountryDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCountryIso2CodeToIdCountryStep(): DataImportStepInterface
     {
         return new CountryIso2CodeToIdCountryStep($this->getCountryPropelQuery());
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createStoreNameToIdStoreStep(): DataImportStepInterface
     {
         return new StoreNameToIdStoreStep($this->getStorePropelQuery());
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCountryStoreWriterStep(): DataImportStepInterface
     {
         return new CountryStoreWriterStep($this->getCountryStorePropelQuery());

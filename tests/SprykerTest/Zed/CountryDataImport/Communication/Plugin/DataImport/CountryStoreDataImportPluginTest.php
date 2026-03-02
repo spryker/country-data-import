@@ -46,9 +46,6 @@ class CountryStoreDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testCountryStoreImportImportsData(): void
     {
         // Arrange
@@ -71,9 +68,6 @@ class CountryStoreDataImportPluginTest extends Unit
         $this->assertGreaterThan(0, $this->tester->getCountryStoreRelationsCount());
     }
 
-    /**
-     * @return void
-     */
     public function testImportWithUnknownCountryCode(): void
     {
         $this->expectException(DataImportException::class);
@@ -95,9 +89,6 @@ class CountryStoreDataImportPluginTest extends Unit
         $countryStoreDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportWithUnknownStore(): void
     {
         $this->expectException(DataImportException::class);
@@ -119,9 +110,6 @@ class CountryStoreDataImportPluginTest extends Unit
         $countryStoreDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testCountryStoreGetImportTypeReturnsTypeOfImporter(): void
     {
         // Arrange

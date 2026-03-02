@@ -31,9 +31,6 @@ class CountryDataImportConfig extends DataImportConfig
         return $this->buildImporterConfiguration($moduleDataImportDirectory . 'country_store.csv', static::IMPORT_TYPE_COUNTRY_STORE);
     }
 
-    /**
-     * @return string
-     */
     protected function getModuleRoot(): string
     {
         $moduleRoot = realpath(
